@@ -1,0 +1,52 @@
+/* button[title]:hover::after{
+    background-color: black;
+    color: white;
+} */
+
+[data-title]:hover::before{
+    background-color: black;
+    color: white;
+    opacity: 1;
+    transition: all 0.1s ease 0.5s;
+    visibility: visible;
+}
+[data-title]::before {
+    content: attr(data-title);
+    background-color: #00FF00;
+    color: #111;
+    font-size: 100%;
+    position: absolute;
+    padding: 1px 5px 2px 5px;
+    bottom: -1.6em;
+    right: 5%;
+    white-space: nowrap;
+    box-shadow: 1px 1px 3px #222222;
+    opacity: 0;
+    border-radius: 8px;
+    z-index: 99999;
+    visibility: hidden;
+}
+
+/* [data-color]::before{
+    content:attr(data-color);
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background: attr(data-color) !important;
+    display:inline-block;
+} */
+
+[data-length]::after{
+    content: attr(data-length) ;
+    font-weight: 400;
+}
+[data-length]:hover{
+    color: rgb(25, 25, 236);
+    text-decoration: underline;
+    cursor: pointer;
+}
+[data-price]::after{
+    display: inline-block;
+    font-weight: bold;
+    content: "₹ "attr(data-price)"";
+}
